@@ -10,7 +10,10 @@
 
 <body>
   <div class="container">
+    @Html.Partial("Header")
     @RenderBody()
+    @Html.ActionLink("Home", "Index", "Home")
+    @Html.Partial("Footer")
   </div>
 </body>
 

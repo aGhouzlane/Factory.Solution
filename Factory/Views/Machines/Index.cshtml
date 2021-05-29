@@ -1,3 +1,6 @@
+@{
+  Layout = "_Layout";
+}
 @using Factory.Models;
 @model List<Factory.Models.Machine>;
 
@@ -13,4 +16,4 @@
   <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })</li>
 }
 
-<p>@Html.ActionLink("Add new patient", "Create")</p>
+<p>@Html.ActionLink("Add new machine", "Create")</p>
