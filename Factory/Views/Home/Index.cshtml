@@ -1,3 +1,26 @@
-<h1>Welcome to the Factory!</h1>
-<p>@Html.ActionLink("View all Engineers", "Index", "Engineers")</p>
-<p>@Html.ActionLink("See all Machines", "Index", "Machines")</p>
+@{
+  Layout = "_Layout";
+}
+<div style="padding: 25px; text-align: center;">
+  <h3>Welcome to Dr. Sillystringz's Factory!</h3>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div style="border-style: solid; border-radius: 10px; padding: 15px; text-align: center;">
+        <img width="70px;" height="70px;" src="~/img/engineer.png" alt="bread-img">
+        <div style="padding: 10px;">
+          <p>@Html.ActionLink("View all Engineers", "Index", "Engineers")</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div style="border-style: solid; border-radius: 10px; padding: 15px; text-align: center;">
+        <img width="70px;" height="70px;" src="~/img/control-lever.png" alt="bread-img">
+        <div style="padding: 10px;">
+          <p>@Html.ActionLink("See all Machines", "Index", "Machines")</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

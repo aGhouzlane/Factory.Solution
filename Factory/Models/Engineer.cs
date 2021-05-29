@@ -14,7 +14,7 @@ namespace Factory.Models
     public int EngineerId { get; set; }
     public string Name { get; set; }
 
-    [DisplayName("HireDate")]
+    [DisplayName("Hire Date")]
     [DataType(DataType.Date)]
     [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
     public DateTime HireDate { get; set; }
