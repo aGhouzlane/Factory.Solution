@@ -40,7 +40,5 @@ namespace Factory.Controllers
       .FirstOrDefault(engineer => engineer.EngineerId == id);
       return View(thisEngineer);
     }
-
-
   }
 }
