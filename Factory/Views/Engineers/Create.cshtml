@@ -3,17 +3,24 @@
 }
 @model Factory.Models.Engineer
 
-<h4>Add a new Engineer</h4>
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name, new { @class="form-control", @required="required"})
-
-  @Html.LabelFor(model => model.HireDate)
-  @Html.TextBoxFor(model => model.HireDate, new {@class="form-control", @type="date", @required="required"})
-
-  <input type="submit" value="Add new engineer" />
-}
-
-<p>@Html.ActionLink("Show all engineers", "Index")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<div class="container">
+  <h4>Add a new Engineer</h4>
+  <div class="table">
+    @using (Html.BeginForm())
+    {
+      @Html.LabelFor(model => model.Name)
+      @Html.TextBoxFor(model => model.Name, new { @class="form-control", @required="required"})
+      <br>
+      @Html.LabelFor(model => model.HireDate)
+      @Html.TextBoxFor(model => model.HireDate, new {@class="form-control", @type="date", @required="required"})
+      <br>
+      <input type="submit" class="btn btn-primary" value="Add new engineer" />
+    }
+  </div>
+  <div style="display: inline-block;">
+    <p>@Html.ActionLink("Show all engineers", "Index")</p>
+  </div>
+  <div style="display: inline-block; padding-left: 7px;">
+    <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  </div>
+</div>

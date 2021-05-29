@@ -3,21 +3,25 @@
 }
 @model Factory.Models.Engineer
 
-<h2>Edit</h2>
-
-<h4>Edit this Engineer: @Html.DisplayFor(model => model.Name)</h4>
-
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.EngineerId)
-
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
-  <br>
-  @Html.LabelFor(model => model.HireDate)
-  @Html.EditorFor(model => model.HireDate, new {@class="form-control", @type="date", @required="required"})
-  <br>
-  <input type="submit" value="Save" />
-}
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<div class="container">
+  <h4>Edit</h4>
+  <div class="table">
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.EngineerId)
+      @Html.LabelFor(model => model.Name)
+      @Html.EditorFor(model => model.Name, new {@class="form-control", @required="required"})
+      <br>
+      @Html.LabelFor(model => model.HireDate)
+      @Html.EditorFor(model => model.HireDate, new {@class="form-control", @type="date", @required="required"})
+      <br>
+      <input type="submit" class="btn btn-success" value="Save" />
+    }
+  </div>
+  <div style="display: inline-block; padding-right: 7px;">
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+  </div>
+  <div style="display: inline-block; padding-right: 7px;">
+    <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  </div>
+</div>
