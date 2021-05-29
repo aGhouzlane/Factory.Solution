@@ -1,0 +1,11 @@
+@model Factory.Models.Engineer;
+
+<h2>Engineer Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.HireDate): @Html.DisplayFor(model => model.HireDate)</h3>
+<br>
+
+<p>@Html.ActionLink("Back to engineers", "Index")</p>
+<p>@Html.ActionLink("Edit engineer", "Edit", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Delete engineer", "Delete", new { id = Model.EngineerId })</p>
