@@ -2,34 +2,45 @@
   Layout = "_Layout";
 }
 @model Factory.Models.Machine
+<div class="container">
+  <h4>Edit</h4>
+  <div class="table">
+    <h4>Edit this Machine: @Html.DisplayFor(model => model.Name)</h4>
 
-<h2>Edit</h2>
+    <h4>Engineers the machine is assigned to:</h4>
+    <ol>
+      @foreach (var join in Model.JoinEntities)
+      {
+        <li>@join.Engineer.Name</li>
+      }
+    </ol>
 
-<h4>Edit this Machine: @Html.DisplayFor(model => model.Name)</h4>
-
-<h4>Engineers the machine is assigned to:</h4>
-<ol>
-  @foreach (var join in Model.JoinEntities)
-  {
-    <li>@join.Engineer.Name</li>
-  }
-</ol>
-
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.MachineId)
-  <br>
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
-  <br>
-  @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description)
-  <br>
-  @Html.Label("Add a doctor")
-  @Html.DropDownList("EngineerId")
-  <br>
-  <input type="submit" value="Save" />
-}
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.MachineId)
+      <br>
+      @Html.LabelFor(model => model.Name)
+      <div>
+        @Html.EditorFor(model => model.Name)
+      </div>
+      <br>
+      @Html.LabelFor(model => model.Description)
+      <div>
+        @Html.TextBoxFor(model => model.Description)
+      </div>
+      <br>
+      @Html.Label("Add a engineer")
+      <div>
+        @Html.DropDownList("EngineerId")
+      </div>
+      <br>
+      <input type="submit" class="btn btn-success" value="Save" />
+    }
+  </div>
+  <div style="display: inline-block; padding-right: 7px;">
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+  </div>
+  <div style="display: inline-block; padding-right: 7px;">
+    <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  </div>
+</div>

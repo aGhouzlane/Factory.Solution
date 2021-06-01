@@ -14,6 +14,13 @@
       @Html.LabelFor(model => model.HireDate)
       @Html.TextBoxFor(model => model.HireDate, new {@class="form-control", @type="date", @required="required"})
       <br>
+      <div>
+        @Html.Label("Select Machine")
+      </div>
+      <div class="form-control">
+        @Html.DropDownList("MachineId")
+      </div>
+      <br>
       <input type="submit" class="btn btn-primary" value="Add new engineer" />
     }
   </div>

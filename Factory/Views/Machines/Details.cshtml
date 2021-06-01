@@ -2,34 +2,38 @@
   Layout = "_Layout";
 }
 @model Factory.Models.Machine
+<div class="container">
+  <h4>Machine Details</h4>
+  <div class="table">
+    <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+    <h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
+    <br>
 
-<h2>Machine Details</h2>
-<hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
-<br>
-
-@if (@Model.JoinEntities.Count == 0)
-{
-  <p>This machines does not belong to any Engineer</p>
-}
-else
-{
-  <h4>Engineer the machine is assigned to:</h4>
-  <ul>
-    @foreach (var join in Model.JoinEntities)
+    @if (@Model.JoinEntities.Count == 0)
     {
-      <li>@join.Engineer.Name</li>
-      @using (Html.BeginForm("DeleteEngineer", "Machines"))
-      {
-        @Html.Hidden("joinId", @join.EngineerMachineId)
-        <input type="submit" value="Delete" />
-      }
+      <p>This machines does not belong to any Engineer</p>
     }
-  </ul>
-}
-<br>
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</p>
-<p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+    else
+    {
+      <h4>Engineer the machine is assigned to:</h4>
+      <ul>
+        @foreach (var join in Model.JoinEntities)
+        {
+          <li>@join.Engineer.Name</li>
+        }
+      </ul>
+    }
+  </div>
+  <div style="display: inline-block; padding-right: 7px;">
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+  </div>
+  <div style="display: inline-block; padding-right: 7px;">
+    <p>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</p>
+  </div>
+  <div style="display: inline-block; padding-right: 7px;">
+    <p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</p>
+  </div>
+  <div style="display: inline-block; padding-right: 7px;">
+    <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  </div>
+</div>

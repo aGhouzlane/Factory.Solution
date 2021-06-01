@@ -10,11 +10,19 @@
     {
       @Html.HiddenFor(model => model.EngineerId)
       @Html.LabelFor(model => model.Name)
-      @Html.EditorFor(model => model.Name, new {@class="form-control", @required="required"})
+      <div>
+        @Html.EditorFor(model => model.Name, new {@class="form-control", @required="required"})
+      </div>
       <br>
       @Html.LabelFor(model => model.HireDate)
-      @Html.EditorFor(model => model.HireDate, new {@class="form-control", @type="date", @required="required"})
+      <div>
+        @Html.EditorFor(model => model.HireDate, new {@class="form-control", @type="date", @required="required"})
+      </div>
       <br>
+      @Html.Label("Add a machine")
+      <div>
+        @Html.DropDownList("MachineId")
+      </div>
       <input type="submit" class="btn btn-success" value="Save" />
     }
   </div>
