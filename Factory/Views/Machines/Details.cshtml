@@ -11,11 +11,11 @@
 
     @if (@Model.JoinEntities.Count == 0)
     {
-      <p>This machines does not belong to any Engineer</p>
+      <p>This machines is not licensed to any Engineer</p>
     }
     else
     {
-      <h4>Engineer the machine is assigned to:</h4>
+      <h4>The machine is licensed to the following engineer(s):</h4>
       <ul>
         @foreach (var join in Model.JoinEntities)
         {
